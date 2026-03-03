@@ -1654,61 +1654,78 @@ style="display:none;"></div>
 <style>
 #rec1196707106 .gg-screen{transition:opacity 0.3s ease,max-height 0.3s ease;}
 #rec1196707106 .gg-screen.gg-hidden{opacity:0;max-height:0;overflow:hidden;pointer-events:none;position:absolute;}
-#rec1196707106 .gg-card{display:inline-block;border:2px solid #e0e4eb;border-radius:10px;padding:8px 16px;margin:0 6px 8px 0;cursor:pointer;font-size:13px;color:#182849;transition:all .2s;background:#fff;}
-#rec1196707106 .gg-card:hover{border-color:#182849;background:#f5f7fa;}
-#rec1196707106 .gg-card.gg-selected{border-color:#182849;background:#182849;color:#fff;}
-#rec1196707106 .gg-card input{display:none;}
-#rec1196707106 .gg-q-title{font-size:13px;font-weight:700;color:#182849;margin:16px 0 8px 0;}
+#rec1196707106 .gg-q-title{font-family:'Mulish',Arial,sans-serif;font-size:14px;font-weight:700;color:#182849;margin:20px 0 10px 0;}
 #rec1196707106 .gg-q-title:first-child{margin-top:0;}
-#rec1196707106 .gg-step-title{font-size:20px;font-weight:900;color:#182849;margin-bottom:16px;text-transform:uppercase;}
-#rec1196707106 .gg-btn{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#182849;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:background .2s;}
+#rec1196707106 .gg-radio-group{list-style:none;margin:0;padding:0;}
+#rec1196707106 .gg-radio-item{display:flex;align-items:center;margin-bottom:10px;cursor:pointer;font-family:'Mulish',Arial,sans-serif;font-size:14px;color:#182849;}
+#rec1196707106 .gg-radio-item input[type="radio"]{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:22px;height:22px;min-width:22px;border:2px solid #b0b8c9;border-radius:50%;margin:0 12px 0 0;cursor:pointer;position:relative;transition:border-color .2s;}
+#rec1196707106 .gg-radio-item input[type="radio"]:checked{border-color:#182849;}
+#rec1196707106 .gg-radio-item input[type="radio"]:checked::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;background:#182849;border-radius:50%;}
+#rec1196707106 .gg-radio-item:hover input[type="radio"]{border-color:#182849;}
+#rec1196707106 .gg-btn{display:block;width:100%;padding:14px;border:none;border-radius:10px;background:#182849;color:#fff;font-family:'Mulish',Arial,sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:24px;transition:background .2s;}
 #rec1196707106 .gg-btn:hover{background:#2a3f6e;}
-#rec1196707106 .gg-age-row{margin:8px 0;display:none;}
+#rec1196707106 .gg-age-row{margin:8px 0 0 34px;display:none;}
 #rec1196707106 .gg-age-row.gg-show{display:block;}
-#rec1196707106 .gg-age-row input{width:100%;padding:10px 14px;border:1px solid #182849;border-radius:5px;font-size:13px;color:#182849;box-sizing:border-box;}
+#rec1196707106 .gg-age-row input{width:100%;padding:10px 14px;border:1px solid #182849;border-radius:5px;font-family:'Mulish',Arial,sans-serif;font-size:14px;color:#182849;box-sizing:border-box;}
+#rec1196707106 .gg-error-msg{color:#ff4444;font-family:'Mulish',Arial,sans-serif;font-size:12px;margin-top:8px;display:none;}
 </style>
 <div class="gg-screen" id="gg-screen1">
-<div class="t-form__inputsbox t-form__inputsbox_vertical-form t-form__inputsbox_inrow"><!-- SCREEN 1: Questions -->
+<div class="t-form__inputsbox t-form__inputsbox_vertical-form t-form__inputsbox_inrow">
+
 <div class="gg-q-title">Я...</div>
-<div>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=Кто]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');var ar=document.getElementById('gg-age-row');if(ar)ar.classList.remove('gg-show');"><input type="radio" name="Кто" value="Я — родитель">Я — родитель</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=Кто]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');var ar=document.getElementById('gg-age-row');if(ar)ar.classList.add('gg-show');"><input type="radio" name="Кто" value="Я — ученик">Я — ученик</label>
+<div class="gg-radio-group">
+<label class="gg-radio-item"><input type="radio" name="Кто" value="Я — родитель" onchange="var a=document.getElementById('gg-age-row');if(a)a.classList.remove('gg-show');"><span>Я — родитель</span></label>
+<label class="gg-radio-item"><input type="radio" name="Кто" value="Я — ученик" onchange="var a=document.getElementById('gg-age-row');if(a)a.classList.add('gg-show');"><span>Я — ученик</span></label>
 </div>
 <div class="gg-age-row" id="gg-age-row"><input type="text" name="Возраст" placeholder="Сколько вам лет?"></div>
 
 <div class="gg-q-title">Сколько у вас времени на подготовку?</div>
-<div>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Время на подготовку&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Время на подготовку" value="0–6 месяцев">0–6 месяцев</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Время на подготовку&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Время на подготовку" value="Полгода — год">Полгода — год</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Время на подготовку&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Время на подготовку" value="Год — два">Год — два</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Время на подготовку&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Время на подготовку" value="Больше двух лет">Больше двух лет</label>
+<div class="gg-radio-group">
+<label class="gg-radio-item"><input type="radio" name="Время на подготовку" value="0–6 месяцев"><span>0–6 месяцев</span></label>
+<label class="gg-radio-item"><input type="radio" name="Время на подготовку" value="Полгода — год"><span>Полгода — год</span></label>
+<label class="gg-radio-item"><input type="radio" name="Время на подготовку" value="Год — два"><span>Год — два</span></label>
+<label class="gg-radio-item"><input type="radio" name="Время на подготовку" value="Больше двух лет"><span>Больше двух лет</span></label>
 </div>
 
 <div class="gg-q-title">Оцените уровень своей заявки/подготовки</div>
-<div>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Уровень подготовки&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Уровень подготовки" value="Всё готово, необходима проверка">Всё готово, необходима проверка</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Уровень подготовки&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Уровень подготовки" value="Почти готово, нужна помощь с отдельными аспектами">Почти готово, нужна помощь с отдельными аспектами</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Уровень подготовки&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Уровень подготовки" value="Есть база: язык, оценки, активности">Есть база: язык, оценки, активности</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Уровень подготовки&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Уровень подготовки" value="Ничего нет">Ничего нет</label>
+<div class="gg-radio-group">
+<label class="gg-radio-item"><input type="radio" name="Уровень подготовки" value="Всё готово, необходима проверка"><span>Всё готово, необходима проверка</span></label>
+<label class="gg-radio-item"><input type="radio" name="Уровень подготовки" value="Почти готово, нужна помощь с отдельными аспектами"><span>Почти готово, нужна помощь с отдельными аспектами</span></label>
+<label class="gg-radio-item"><input type="radio" name="Уровень подготовки" value="Есть база: язык, оценки, активности"><span>Есть база: язык, оценки, активности</span></label>
+<label class="gg-radio-item"><input type="radio" name="Уровень подготовки" value="Ничего нет"><span>Ничего нет</span></label>
 </div>
 
 <div class="gg-q-title">Бюджет</div>
-<div>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Бюджет&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Бюджет" value="До 5 000 $">До 5 000 $</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Бюджет&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Бюджет" value="До 10 000 $">До 10 000 $</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Бюджет&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Бюджет" value="До 15 000 $">До 15 000 $</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Бюджет&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Бюджет" value="20 000 $ и более">20 000 $ и более</label>
+<div class="gg-radio-group">
+<label class="gg-radio-item"><input type="radio" name="Бюджет" value="До 5 000 $"><span>До 5 000 $</span></label>
+<label class="gg-radio-item"><input type="radio" name="Бюджет" value="До 10 000 $"><span>До 10 000 $</span></label>
+<label class="gg-radio-item"><input type="radio" name="Бюджет" value="До 15 000 $"><span>До 15 000 $</span></label>
+<label class="gg-radio-item"><input type="radio" name="Бюджет" value="20 000 $ и более"><span>20 000 $ и более</span></label>
 </div>
 
 <div class="gg-q-title">Готовы ли вы рассмотреть наши услуги, чтобы повысить шанс на финансирование?</div>
-<div>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Готовность&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Готовность" value="Да, хочу начать сейчас">Да, хочу начать сейчас</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Готовность&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Готовность" value="Да, но сначала хочу понять план">Да, но сначала хочу понять план</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Готовность&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Готовность" value="Возможно в будущем">Возможно в будущем</label>
-<label class="gg-card" onclick="this.querySelector('input').checked=true;document.querySelectorAll('[name=&quot;Готовность&quot;]').forEach(function(r){r.closest('.gg-card').classList.remove('gg-selected')});this.classList.add('gg-selected');"><input type="radio" name="Готовность" value="Нет, только бесплатные материалы">Нет, только бесплатные материалы</label>
+<div class="gg-radio-group">
+<label class="gg-radio-item"><input type="radio" name="Готовность" value="Да, хочу начать сейчас"><span>Да, хочу начать сейчас</span></label>
+<label class="gg-radio-item"><input type="radio" name="Готовность" value="Да, но сначала хочу понять план"><span>Да, но сначала хочу понять план</span></label>
+<label class="gg-radio-item"><input type="radio" name="Готовность" value="Возможно в будущем"><span>Возможно в будущем</span></label>
+<label class="gg-radio-item"><input type="radio" name="Готовность" value="Нет, только бесплатные материалы"><span>Нет, только бесплатные материалы</span></label>
 </div>
 
-<button type="button" class="gg-btn" onclick="document.getElementById('gg-screen1').classList.add('gg-hidden');document.getElementById('gg-screen2').classList.remove('gg-hidden');document.getElementById('popuptitle_1196707106').textContent='Куда отправить разбор вашего случая?';">Продолжить</button>
+<div class="gg-error-msg" id="gg-error-msg">Пожалуйста, ответьте на все вопросы</div>
+<script>
+function ggValidateAndNext(){
+  var names=['Кто','Время на подготовку','Уровень подготовки','Бюджет','Готовность'];
+  for(var i=0;i<names.length;i++){
+    var sel=document.querySelector('#gg-screen1 input[name="'+names[i]+'"]:checked');
+    if(!sel){document.getElementById('gg-error-msg').style.display='block';return;}
+  }
+  document.getElementById('gg-error-msg').style.display='none';
+  document.getElementById('gg-screen1').classList.add('gg-hidden');
+  document.getElementById('gg-screen2').classList.remove('gg-hidden');
+  document.getElementById('popuptitle_1196707106').textContent='Куда отправить разбор вашего случая?';
+}
+</script>
+<button type="button" class="gg-btn" onclick="ggValidateAndNext();">Продолжить</button>
 </div></div><!-- end screen 1 -->
 
 <div class="gg-screen gg-hidden" id="gg-screen2">
